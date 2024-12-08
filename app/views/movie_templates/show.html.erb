@@ -65,7 +65,7 @@
     <input type="text" id="director_id_box" name="query_director_id" value="<%= @the_movie.director_id %>">
   </div>
 
-  <button>
+  <button type="submit">
     Update movie
   </button>
 </form>
@@ -112,7 +112,11 @@
     Director
   </dt>
   <dd>
-    <%= @the_movie.director.name %>
+    <% if @the_movie.director != nil %>
+      <%= @the_movie.director.name %>
+    <% else%>
+      ""
+    <% end %>
   </dd>
 
   <dt>
